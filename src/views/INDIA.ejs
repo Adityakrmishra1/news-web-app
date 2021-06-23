@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+	<header class="header">
+		<div class="header_logo">
+			<a href="/"> WORLD </a>
+		</div>
+		<div class="header__logo">
+			<a href="/TechNews">Tech News</a>
+		</div>
+		<div class="header__logo">
+			<a href="/INDIA">INDIA</a>
+		</div>
+		<%- include('./partials/search.ejs') %>
+
+	</header>
+	<div class="wrapper">
+		<div class="news">
+			<% if(articles != null) { %>
+			<% articles.forEach(function(article, index) { %>
+			<a href="<%- article.url %>" class="news__card">
+				<img src="<%- article.urlToImage %>" alt="<%- article.title %>">
+				<h2><%- article.title %></h2>
+				<p><%- article.description %></p>
+			</a>
+			<% }) %>
+			<% } else { %>
+			No posts found.
+			<% } %>
+		</div>
+	</div>
+	<script src="">
+	</script>
+</body>
+
+</html>
